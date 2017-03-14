@@ -1,0 +1,15 @@
+---
+title: Coinhabitent Journal
+subtitle: Angular2, javascript
+layout: default
+modal-id: 4
+date: 2017-03-13
+img: angular2.jpeg
+thumbnail: form.jpeg
+alt: image-alt
+project-date: Feb 2017
+client: Coinhabitent
+category: Web Development
+description: A blogging website written in Angular2. It uses components, services and routers to  allow users to post and get journal entries from a server. A form with validation was created to allow user to post new journals.
+
+---

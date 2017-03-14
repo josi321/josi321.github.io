@@ -1,0 +1,15 @@
+---
+title: Coinhabitent Theme
+subtitle: PHP, Wordpress
+layout: default
+modal-id: 5
+date: 2017-03-13
+img: blog.jpg
+thumbnail: blog thumbnail.jpeg
+alt: image-alt
+project-date: Mar 2017
+client: Coinhabitent
+category: Custom Theme
+description: A custom Wordpress theme for a camp blogging site. The theme has archive pages, single pages, and single post pages. It also has commenting and searching functionality.
+
+---

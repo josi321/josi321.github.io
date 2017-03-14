@@ -1,0 +1,16 @@
+---
+title: Aloha
+subtitle: HTML, CSS
+layout: default
+modal-id: 1
+date: 2017-03-12
+img: Aloha webpage1.jpeg
+thumbnail: Aloha thumbnail.jpeg
+alt: image-alt
+project-date: Jan 2017
+client: Aloha
+category: Web Development
+description: Responsive single static HTML page. Products were hard coded into the HTML.   
+
+
+---

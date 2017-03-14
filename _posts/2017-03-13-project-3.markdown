@@ -1,0 +1,15 @@
+---
+title: Best Buy Dupe
+subtitle: ES6, API, JSON, node
+layout: default
+modal-id: 3
+date: 2017-03-13
+img: bestbuy.jpeg
+thumbnail: quickview.jpeg
+alt: image-alt
+project-date: Feb 2017
+client: Aloha Best Buy
+category: Web Development
+description: Turned the Aloha static site to include a carousel that is populated with data from Best Buy's API. Shopping cart functionality were coded using javascript. Shopping cart functions include the following- Quick View, Add Item to Cart, Remove Item from Cart, Update cart value, Clear cart and Check Out. Session storage was also implemented.
+
+---

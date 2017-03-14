@@ -1,0 +1,15 @@
+---
+title: Aloha 2
+subtitle: HTML, SASS, JAVASCRIPT
+layout: default
+modal-id: 2
+date: Jan 2017
+img: Aloha Webpage part 2.jpeg
+thumbnail: aloha1b.jpeg
+alt: image-alt
+project-date: April 2014
+client: Aloha
+category: Web Development
+description: Responsive single page website with owl carousel
+
+---
