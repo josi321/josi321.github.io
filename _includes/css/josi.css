@@ -249,7 +249,15 @@ fieldset[disabled] .btn-xl.active {
   margin-right: 25px;
   /*font-size: 25px;*/
 }
+/*COPYRIGHT*/
 
+.copyright {
+    text-transform: uppercase;
+    text-transform: none;
+    color: white;
+    line-height:40px;
+    font-family: {{ site.data.template.font.primary }};
+  }
 @media(min-width:768px) {
     .navbar-default {
         padding: 25px 0;
