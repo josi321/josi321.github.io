@@ -1,5 +1,5 @@
 ---
-title: Best Buy Dupe
+title: Best Buy Clone
 subtitle: ES6, API, JSON, node
 layout: default
 modal-id: 3
