@@ -172,13 +172,13 @@
             // ---------------------------------------------------------
             //                                                    NUMBER
             // ---------------------------------------------------------
-            if ($this.attr("type") !== undefined && $this.attr("type").toLowerCase() === "number") {
-              message = settings.builtInValidators.number.message;
-              if ($this.data("validationNumberMessage")) {
-                message = $this.data("validationNumberMessage");
-              }
-              $this.data("validationNumberMessage", message);
-            }
+            // if ($this.attr("type") !== undefined && $this.attr("type").toLowerCase() === "number") {
+            //   message = settings.builtInValidators.number.message;
+            //   if ($this.data("validationNumberMessage")) {
+            //     message = $this.data("validationNumberMessage");
+            //   }
+            //   $this.data("validationNumberMessage", message);
+            // }
             // ---------------------------------------------------------
             //                                                     EMAIL
             // ---------------------------------------------------------
@@ -478,7 +478,7 @@
                 // How many errors did we find?
                 if (settings.options.semanticallyStrict && errorsFound.length === 1) {
                   // Only one? Being strict? Just output it.
-                  $helpBlock.html(errorsFound[0] + 
+                  $helpBlock.html(errorsFound[0] +
                     ( settings.options.prependExistingHelpBlock ? $helpBlock.data("original-contents") : "" ));
                 } else {
                   // Multiple? Being sloppy? Glue them together into an UL.
