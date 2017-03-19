@@ -1,15 +1,15 @@
 ---
-title: Icons
-subtitle: filler
+title: Sage Canada
+subtitle: Custom Wordpress Theme
 layout: default
 modal-id: 6
 date: 2017-03-13
-img: roundicons.png
-thumbnail: roundicons-thumbnail.png
+img: sageprograms.jpeg
+thumbnail: sagehome.jpeg
 alt: image-alt
 project-date: Mar 2017
-client: Start Bootstrap
-category: Web Development
-description: Lorem ipsum dolor sit amet, usu cu alterum nominavi lobortis. At duo novum diceret. Tantas apeirian vix et, usu sanctus postulant inciderint ut, populo diceret necessitatibus in vim. Cu eum dicam feugiat noluisse.
+client: Sage Canada
+category: Custom Wordpress theme
+description: Redesigned and developed Sage Canada's website. SAGE Canada is part of a larger global network that creates opportunities for youth to bring their ideas to life. Their program mentors young people, teaches them entrepreneurial skills and provides them with resources to turn their ideas into live business ventures. The theme has several custom pluggins, archive pages, single pages and post pages.
 
 ---
