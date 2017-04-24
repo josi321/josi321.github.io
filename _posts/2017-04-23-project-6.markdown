@@ -1,0 +1,15 @@
+---
+title: Tesla Range Charger
+subtitle: Angular2
+layout: default
+modal-id: 7
+date: 2017-04-23
+img: teslarange.gif
+thumbnail: teslarange.gif
+alt: image-alt
+project-date: April 2017
+client: projects
+category: Angular2
+description: Used Angular2 to rebuild Telsa's battery range calculator. This application has reactive forms API, and custom form controls for type of engine, speed, temperature, wheel size as well as heat and air conditioning controls
+
+---

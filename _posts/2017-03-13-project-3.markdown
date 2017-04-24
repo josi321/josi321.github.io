@@ -10,6 +10,6 @@ alt: image-alt
 project-date: Feb 2017
 client: Aloha Best Buy
 category: Web Development
-description: Turned the Aloha static site to include a carousel that is populated with data from Best Buy's API. Shopping cart functionality were coded using javascript. Shopping cart functions include the following- Quick View, Add Item to Cart, Remove Item from Cart, Update cart value, Clear cart and Check Out. Session storage was also implemented.
+description: The e-commerce platform is coded in javascript, with products in the carousel populated with data from Best Buy's API. The cart has various functions including Quick View, Add Item to Cart, Remove Item from Cart, Update Cart Value, Clear Cart and Check Out. Session storage and stripe payment was also implemented.
 
 ---

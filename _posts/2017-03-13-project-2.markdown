@@ -1,6 +1,6 @@
 ---
 title: Aloha 2
-subtitle: HTML, SASS, JAVASCRIPT
+subtitle: HTML, SASS, Javascript
 layout: default
 modal-id: 2
 date: 2017-03-13
