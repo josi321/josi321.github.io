@@ -5,7 +5,7 @@ layout: default
 modal-id: 3
 date: 2017-03-13
 img: ShoppingCart.jpeg
-thumbnail: quickview.jpeg
+thumbnail: quickview.jpg
 alt: image-alt
 project-date: Feb 2017
 client: Aloha Best Buy
