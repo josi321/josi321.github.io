@@ -2,9 +2,14 @@
 layout: default
 ---
 
-{{% if page.previous %}}
-  <a rel="prev" href="{{ page.previous.url }}">&larr; {{ page.previous.title }}</a>
-  {% endif %}
-  {% if page.next %}
-    <a rel="next" href="{{ page.next.url}}">{{ page.next.title}} &rarr;</a>
-  {% endif %}  
+<!-- <a href="/">home</a>
+<h2 class="content">{{page.title}}</h2>
+<b>{{ page.date | date: "%d %B %Y" }}</b>
+{{ content }}
+
+{% if page.previous %}
+        <a rel="prev" href="{{ page.previous.url }}">&larr; {{ page.previous.title }}</a>
+    {% endif %}
+    {% if page.next %}
+        <a rel="next" href="{{ page.next.url }}">{{ page.next.title }} &rarr;</a>
+    {% endif %} -->

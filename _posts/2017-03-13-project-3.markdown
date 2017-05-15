@@ -4,12 +4,12 @@ subtitle: ES6, API, JSON, node
 layout: default
 modal-id: 3
 date: 2017-03-13
-img: bestbuy.jpeg
+img: ShoppingCart.jpeg
 thumbnail: quickview.jpeg
 alt: image-alt
 project-date: Feb 2017
 client: Aloha Best Buy
 category: Web Development
-description: The e-commerce platform is coded in javascript, with products in the carousel populated with data from Best Buy's API. The cart has various functions including Quick View, Add Item to Cart, Remove Item from Cart, Update Cart Value, Clear Cart and Check Out. Session storage and stripe payment was also implemented.
+description: An e-commerce platform coded in javascript, with products in the carousel populated with data from Best Buy's API. The cart has various functions including Quick View, Add Item to Cart, Remove Item from Cart, Update Cart Value, Clear Cart and Check Out. Session storage and stripe payment was also implemented.
 
 ---
