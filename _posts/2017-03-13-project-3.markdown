@@ -4,8 +4,8 @@ subtitle: ES6, API, JSON, node
 layout: default
 modal-id: 3
 date: 2017-03-13
-img: ShoppingCart.jpeg
-thumbnail: quickview.jpg
+img: ShoppingCart.jpg
+thumbnail: quickview.jpeg
 alt: image-alt
 project-date: Feb 2017
 client: Aloha Best Buy
