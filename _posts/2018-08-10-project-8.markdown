@@ -1,0 +1,15 @@
+---
+title: Product Design
+subtitle: Adobe Photoshop and Illustrator
+layout: default
+modal-id: 9
+date: 2018-10-08
+img: BullBrew.png
+thumbnail: Bull Brew Beer Bottle MockUp.png
+alt: image-alt
+project-date: Oct 2018
+client: projects
+category: Adobe Photoshop, Adobe Illustrator
+description: Packaging design using Adobe Photoshop and Illustrator
+
+---

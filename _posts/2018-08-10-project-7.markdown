@@ -1,0 +1,15 @@
+---
+title: Cartoon illustration
+subtitle: Adobe Illustrator
+layout: default
+modal-id: 8
+date: 2018-10-08
+img: angelababy-Illustrator.jpeg
+thumbnail: angelababy_v6.png
+alt: image-alt
+project-date: Oct 2018
+client: projects
+category: Adobe Illustrator
+description: Illustration of Angelababy using Adobe Illustrator
+
+---

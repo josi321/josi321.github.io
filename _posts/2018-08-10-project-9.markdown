@@ -1,0 +1,15 @@
+---
+title: Web Design and Development
+subtitle: Wordpress
+layout: default
+modal-id: 15
+date: 2018-10-08
+img: lapfa.jpg
+thumbnail: lapfa-thumbnail.png
+alt: image-alt
+project-date: Jul 2017
+client: projects
+category: Wordpress, Custom Theme, PHP, HTML, CSS, JavaScript
+description: Provided web design and development for Lapfa.
+
+---

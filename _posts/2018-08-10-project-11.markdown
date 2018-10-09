@@ -1,0 +1,15 @@
+---
+title: Graphic Design
+subtitle: Adobe Photoshop and Illustrator
+layout: default
+modal-id: 14
+date: 2018-10-08
+img: copperhead-poster.png
+thumbnail: copperhead-poster.png
+alt: image-alt
+project-date: Sept 2018
+client: projects
+category: Adobe Photoshop, Adobe Illustrator
+description: Minimalistic poster design using Adobe Photoshop and Illustrator
+
+---
