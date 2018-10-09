@@ -10,6 +10,6 @@ alt: image-alt
 project-date: Oct 2018
 client: projects
 category: Adobe Photoshop, Adobe Illustrator
-description: Packaging design using Adobe Photoshop and Illustrator
+description: Designed logo and packaging using Adobe Photoshop and Illustrator
 
 ---

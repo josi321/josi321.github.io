@@ -1,5 +1,5 @@
 ---
-title: Cartoon illustration
+title: Cartoon Illustration
 subtitle: Adobe Illustrator
 layout: default
 modal-id: 8
