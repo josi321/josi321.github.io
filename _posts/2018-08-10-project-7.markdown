@@ -4,7 +4,7 @@ subtitle: Adobe Illustrator
 layout: default
 modal-id: 8
 date: 2018-10-08
-img: angelababy-Illustrator.jpeg
+img: angelababy-illustrator.jpeg
 thumbnail: angelababy_v6.png
 alt: image-alt
 project-date: Oct 2018
