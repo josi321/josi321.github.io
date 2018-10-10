@@ -2,7 +2,7 @@
 title: Product Design
 subtitle: Adobe Photoshop and Illustrator
 layout: default
-modal-id: 16
+modal-id: 20
 date: 2018-10-08
 img: coffeebean Packaging MockUp.png
 thumbnail: coffeebean Packaging MockUp.png
