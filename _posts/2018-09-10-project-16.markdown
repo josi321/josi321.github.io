@@ -1,0 +1,15 @@
+---
+title: Web Design
+subtitle: Heady on the Low
+layout: default
+modal-id: 20
+date: 2018-10-09
+img: headyonthelow.png
+thumbnail: heady-banner.png
+alt: image-alt
+project-date: June 2018
+client: projects
+category: Adobe Photoshop
+description: Web design for a local medical marijuana company. Responsive web template including home page, shop page, shopping cart and about page.
+
+---

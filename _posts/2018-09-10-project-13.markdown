@@ -1,0 +1,15 @@
+---
+title: Web Design and Development
+subtitle: AdClub of Toronto
+layout: default
+modal-id: 17
+date: 2018-10-09
+img: adclub1.png
+thumbnail: adclub1.png
+alt: image-alt
+project-date: Sept 2018
+client: projects
+category: Adobe Photoshop and Illustrator, HTML/CSS/JavaScript/PHP/WordPress
+description: Web design and development for a non-profit company in Toronto. Designed using Adobe Photoshop, Sketch and envision, and coded in HTML/SASS/JavaScript/PHP/WordPress.
+
+---

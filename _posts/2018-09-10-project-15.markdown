@@ -1,0 +1,15 @@
+---
+title: Web Design
+subtitle: Nathaniel's Boutique Bakery
+layout: default
+modal-id: 19
+date: 2018-10-09
+img: nathaniels-all.jpg
+thumbnail: nathaniels-banner.jpg
+alt: image-alt
+project-date: Mar 2017
+client: projects
+category: Adobe Photoshop
+description: Web design for a local bakery using Adobe Photoshop. Responsive web template including home page, shop page, shopping cart and 404 page.
+
+---

@@ -1,0 +1,15 @@
+---
+title: Web Design and Development
+subtitle: AJJ Consulting
+layout: default
+modal-id: 16
+date: 2018-10-09
+img: AJJ Consulting web mobile.png
+thumbnail: ajjconsulting-banner.jpg
+alt: image-alt
+project-date: May 2017
+client: projects
+category: Adobe Photoshop and Illustrator, HTML/CSS/JavaScript
+description: Web design and development for a local consulting company. Designed using Adobe Illustrator and Photoshop, and coded in HTML/SASS/JavaScript.
+
+---
