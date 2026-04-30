@@ -1,27 +1,393 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Josi Donaldson · AI Automation Consultant in Toronto</title>
+  <meta name="description" content="Senior business analyst and automation consultant. 10 years of work experience, 9 in banking, insurance, and management consulting. Available for select AI agent and automation engagements.">
 
-<div class="home">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <h1>Posts</h1>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-<!-- {% for post in paginator.posts %} -->
-  <ul class="posts">
+  <nav class="site-nav" id="siteNav">
+    <div class="container">
+      <a class="nav-brand" href="#top">Josi Donaldson</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#portfolio">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    {% for post in site.posts %}
-      <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
+  <main id="main-content">
+  <header id="top" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-main">
+          <span class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Toronto · Available Q2-Q3 2026</span>
+          <h1>Solutions Architect &amp; AI Automation Consultant.</h1>
+          <p class="lede">I help mid-market and enterprise teams design, scope, and ship AI and automation work that actually moves operational numbers.</p>
+          <div class="hero-meta">
+            <span><span class="dot"></span>10 years of work experience · 9 in banking, insurance, consulting</span>
+            <span><span class="dot"></span>Currently Solutions Architect at a global IT consultancy</span>
+          </div>
+          <dl class="hero-facts">
+            <div>
+              <dt>Engagement model</dt>
+              <dd>4-week pilots through 6-month builds. Fixed-price, milestone, or hourly.</dd>
+            </div>
+            <div>
+              <dt>Currently focused on</dt>
+              <dd>Multi-agent claims and document workflows for regulated industries.</dd>
+            </div>
+            <div>
+              <dt>Recent</dt>
+              <dd>Reference architecture for a 14-FTE claims-triage replacement. <a href="case-studies/claims-triage/">Case study</a>.</dd>
+            </div>
+          </dl>
+        </div>
+        <figure class="hero-illustration" aria-hidden="true">
+          <span class="hero-blob hero-blob--lg" aria-hidden="true"></span>
+          <span class="hero-blob hero-blob--sm-tl" aria-hidden="true"></span>
+          <span class="hero-blob hero-blob--sm-br" aria-hidden="true"></span>
+          <span class="hero-blob hero-blob--mid-r" aria-hidden="true"></span>
+          <img src="images/hero-woman-clean.webp" alt="">
+        </figure>
+      </div>
+    </div>
+  </header>
 
-  </ul>
-<!-- {% endfor %} -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>AI Agent Development</span>
+      <span class="marquee-dot">●</span>
+      <span>Automation &amp; RPA</span>
+      <span class="marquee-dot">●</span>
+      <span>Solutions Architecture</span>
+      <span class="marquee-dot">●</span>
+      <span>ROI Modeling</span>
+      <span class="marquee-dot">●</span>
+      <span>AI Agent Development</span>
+      <span class="marquee-dot">●</span>
+      <span>Automation &amp; RPA</span>
+      <span class="marquee-dot">●</span>
+      <span>Solutions Architecture</span>
+      <span class="marquee-dot">●</span>
+      <span>ROI Modeling</span>
+      <span class="marquee-dot">●</span>
+    </div>
+  </div>
 
+  <section class="about" id="about">
+    <span class="deco-shape" aria-hidden="true"><img src="images/doodle-notebook.svg" alt=""></span>
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-bio">
+          <span class="eyebrow">About</span>
+          <h2><span class="section-mark"><img src="images/leaf-mark.svg" alt=""></span> I bridge the language gap between business stakeholders, UX, and engineering, and I ship.</h2>
+          <p>Ten years of work, nine of them across banking (TD), insurance (Intact, Questrade), and management consulting (Deloitte, Cognizant). My background is requirements engineering and automation strategy. My recent work is agentic AI and orchestration.</p>
+          <p>I take on a small number of select freelance engagements where the scope fits my background and the work matters. Discovery to delivery, not just advisory.</p>
 
+          <div class="metrics">
+            <div class="metric">
+              <span class="num"><em data-count="80" data-suffix="+">80+</em></span>
+              <span class="label">Automation and AI implementations delivered</span>
+            </div>
+            <div class="metric">
+              <span class="num">$<em data-count="3" data-suffix="M+">3M+</em></span>
+              <span class="label">Annual operational savings created</span>
+            </div>
+            <div class="metric">
+              <span class="num"><em data-count="10" data-suffix="K+">10K+</em></span>
+              <span class="label">Hours of recurring effort eliminated</span>
+            </div>
+            <div class="metric">
+              <span class="num"><em data-count="10">10</em> yrs</span>
+              <span class="label">Of work, 9 across banking, insurance, consulting</span>
+            </div>
+          </div>
+        </div>
 
+        <div class="services-list">
+          <span class="eyebrow">Services</span>
+          <div class="service">
+            <div class="service-num">01</div>
+            <h3>AI Agent Development</h3>
+            <p>I build agentic systems for teams who need AI that does the work, not AI that talks about it. Anthropic API, n8n, agent orchestration, retrieval and tool-use, evals. From single-agent pilots to multi-agent fleets.</p>
+          </div>
+          <div class="service">
+            <div class="service-num">02</div>
+            <h3>Automation &amp; RPA</h3>
+            <p>UiPath, BluePrism, custom Python pipelines. 80+ implementations delivered. I focus on the boring 80% that actually saves the hours: claims triage, document understanding, integration glue, exception handling. Production-grade, monitored, owned.</p>
+          </div>
+          <div class="service">
+            <div class="service-num">03</div>
+            <h3>Solutions Architecture</h3>
+            <p>Cross-system integration, technology evaluation, ROI modeling, agile delivery. The work that turns a stakeholder's "we should automate this" into a scoped plan with billable milestones.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+  <section class="experience" id="experience">
+    <span class="deco-shape" aria-hidden="true"><img src="images/doodle-chart.svg" alt=""></span>
+    <div class="container">
+      <span class="eyebrow">Experience</span>
+      <h2><span class="section-mark"><img src="images/leaf-mark.svg" alt=""></span> Ten years of work, nine across banking, insurance, and consulting.</h2>
 
-</div>
+      <div class="timeline">
+
+        <div class="timeline-entry">
+          <div class="timeline-date">2022 — Now</div>
+          <div class="timeline-body">
+            <h4>Solutions Architect</h4>
+            <div class="role">Global IT consultancy · Promoted from Business Solutions Manager (2024)</div>
+            <p>Senior BA and technology consultant for enterprise financial-services clients. Lead requirements discovery, customer-journey analysis, and automation strategy across digital-transformation programs.</p>
+          </div>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="timeline-date">2020 — 2022</div>
+          <div class="timeline-body">
+            <h4>RPA Technical Lead and Manager</h4>
+            <div class="role">Questrade · Business Analysis and Automation Strategy</div>
+            <p>Built and led the team delivering enterprise automation. Designed automation architecture, deployed 50+ UiPath workflows, built monitoring dashboards in Kibana and ElasticSearch, managed orchestrator and SQL infrastructure. Acted as Solutions Architect on M&amp;A integrations for CTC and ThinkInsure.</p>
+          </div>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="timeline-date">2017 — 2020</div>
+          <div class="timeline-body">
+            <h4>Senior Consultant</h4>
+            <div class="role">Deloitte · Banking, insurance, public sector</div>
+            <p>Engagements as Agile Coach, DevOps Consultant, Release Manager, Business Analyst, and Full-Stack Developer. Facilitated Agile transformations and CI/CD adoption.</p>
+          </div>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="timeline-date">2011 — 2016</div>
+          <div class="timeline-body">
+            <h4>BSc Honours, University of Toronto</h4>
+            <div class="role">Health &amp; Disease, Genome Biology · Minor in Writing</div>
+            <p>Intended pre-med. Discovered programming through statistics work and pivoted into software via HarvardX and self-directed study (2017).</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="timeline-impact">
+        <div class="label">Selected impact</div>
+        <div class="stats">
+          <div class="stat"><strong data-count="80" data-suffix="+">80+</strong><span>Implementations</span></div>
+          <div class="stat"><strong data-count="3" data-prefix="$" data-suffix="M+">$3M+</strong><span>Annual savings</span></div>
+          <div class="stat"><strong data-count="10" data-suffix="K+">10K+</strong><span>Hours eliminated</span></div>
+          <div class="stat"><strong data-count="50" data-suffix="+">50+</strong><span>UiPath workflows</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills">
+    <span class="deco-shape" aria-hidden="true"><img src="images/doodle-tools.svg" alt=""></span>
+    <div class="container">
+      <span class="eyebrow">Stack &amp; tools</span>
+      <h2><span class="section-mark"><img src="images/leaf-mark.svg" alt=""></span> What I work with.</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <span class="skill-num">01</span>
+          <h4>AI &amp; Automation</h4>
+          <ul>
+            <li>Anthropic API</li>
+            <li>n8n</li>
+            <li>UiPath</li>
+            <li>BluePrism</li>
+            <li>ABBYY FlexiCapture</li>
+            <li>Document Understanding</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <span class="skill-num">02</span>
+          <h4>Cloud &amp; Data</h4>
+          <ul>
+            <li>AWS</li>
+            <li>Google Cloud</li>
+            <li>TensorFlow</li>
+            <li>ElasticSearch</li>
+            <li>Kibana</li>
+            <li>Python</li>
+            <li>SQL</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <span class="skill-num">03</span>
+          <h4>Web &amp; Static</h4>
+          <ul>
+            <li>Hugo</li>
+            <li>Cloudflare Pages</li>
+            <li>Node</li>
+            <li>JavaScript</li>
+            <li>HTML / CSS</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <span class="skill-num">04</span>
+          <h4>Process &amp; Delivery</h4>
+          <ul>
+            <li>Agile / Scrum</li>
+            <li>CSM (2024)</li>
+            <li>Jira</li>
+            <li>Confluence</li>
+            <li>ServiceNow</li>
+            <li>ROI modeling</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio" id="portfolio">
+    <span class="deco-shape" aria-hidden="true"><img src="images/doodle-frame.svg" alt=""></span>
+    <div class="container">
+      <span class="eyebrow">Selected work</span>
+      <h2><span class="section-mark"><img src="images/leaf-mark.svg" alt=""></span> Recent and representative.</h2>
+      <p class="portfolio-intro">A mix of deep architectural work, deployed reference systems, and earlier full-stack engagements. Click through for case studies and live demos.</p>
+
+      <ol class="portfolio-list" start="1">
+
+        <li class="portfolio-item portfolio-item--featured">
+          <span class="portfolio-index">01</span>
+          <div class="portfolio-body">
+            <div class="portfolio-tag">Case study · AI architecture · 2026</div>
+            <h4>Multi-Agent Claims Triage for Mid-Market Insurance</h4>
+            <p>Reference architecture for replacing a 14-FTE triage team with a supervised multi-agent system. 79% reduction in median triage time. Modeled $2.1M annual savings.</p>
+            <a class="portfolio-link" href="case-studies/claims-triage/">Read the case study</a>
+          </div>
+          <a class="portfolio-thumb" href="case-studies/claims-triage/" aria-label="Open case study">
+            <img src="images/portfolio/case-study-claims-triage.webp" alt="Case study page header showing the article title and breadcrumb" loading="lazy" width="1200" height="675">
+          </a>
+        </li>
+
+        <li class="portfolio-item portfolio-item--featured">
+          <span class="portfolio-index">02</span>
+          <div class="portfolio-body">
+            <div class="portfolio-tag">Live demo · Hugo + Anthropic + Cloudflare</div>
+            <h4>Multi-Blog Framework</h4>
+            <p>Hugo framework for running multiple distinct blogs from one repo. Per-section RSS, per-section tone profiles, Anthropic-assisted drafting, Cloudflare Pages deploy. Live demo with three publications.</p>
+            <a class="portfolio-link" href="multi-blog-demo/">Open the demo</a>
+          </div>
+          <a class="portfolio-thumb" href="multi-blog-demo/" aria-label="Open the multi-blog demo">
+            <img src="images/portfolio/multi-blog-demo.webp" alt="Multi-blog framework demo homepage with three blog cards" loading="lazy" width="1200" height="675">
+          </a>
+        </li>
+
+        <li class="portfolio-item portfolio-item--featured">
+          <span class="portfolio-index">03</span>
+          <div class="portfolio-body">
+            <div class="portfolio-tag">Impact study · Anonymized · Insurance</div>
+            <h4>Enterprise RPA Rollout</h4>
+            <p>Discovery and rollout of enterprise automation for a top-five Canadian insurer. 50+ workflows deployed in UiPath. Monitored dashboards in Kibana. Names and account-specifics redacted per professional discretion.</p>
+            <a class="portfolio-link" href="#contact">Discuss a similar rollout</a>
+          </div>
+          <span class="portfolio-thumb portfolio-thumb--placeholder" aria-hidden="true">
+            <span class="portfolio-thumb-mark">RPA</span>
+          </span>
+        </li>
+
+        <li class="portfolio-item">
+          <span class="portfolio-index">04</span>
+          <div class="portfolio-body">
+            <div class="portfolio-tag">Web design + dev · WordPress</div>
+            <h4>AdClub of Toronto</h4>
+            <p>Full website redesign and build for the not-for-profit advertising association of Toronto. Custom theme, responsive across devices.</p>
+            <a class="portfolio-link" href="https://adclub.ca/" rel="noopener" target="_blank">Visit adclub.ca</a>
+          </div>
+          <a class="portfolio-thumb" href="https://adclub.ca/" rel="noopener" target="_blank" aria-label="Visit AdClub of Toronto">
+            <img src="images/portfolio/adclub1.webp" alt="AdClub of Toronto website homepage screenshot" loading="lazy" width="1200" height="675">
+          </a>
+        </li>
+
+        <li class="portfolio-item">
+          <span class="portfolio-index">05</span>
+          <div class="portfolio-body">
+            <div class="portfolio-tag">Web design · Hospitality</div>
+            <h4>Manic Coffee</h4>
+            <p>Local coffee shop site refresh. Clean responsive design, photography-led layout, optimized for mobile ordering flows.</p>
+            <a class="portfolio-link" href="#contact">Details available on request</a>
+          </div>
+          <span class="portfolio-thumb">
+            <img src="images/portfolio/manic-thumbnail.webp" alt="Manic Coffee website screenshot" loading="lazy" width="1200" height="675">
+          </span>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div>
+          <span class="eyebrow">Contact</span>
+          <h2><span class="section-mark"><img src="images/leaf-mark.svg" alt=""></span> Have a project worth scoping?</h2>
+          <p>I review every inquiry personally and reply within two business days.</p>
+
+          <form class="contact-form" action="https://formspree.io/hello@josi.tech" method="POST">
+            <div>
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required>
+            </div>
+            <div>
+              <label for="message">Project context</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit">Send message</button>
+          </form>
+        </div>
+
+        <aside class="contact-direct" aria-label="Direct contact details">
+          <strong>Direct</strong>
+          <a class="email-link" href="mailto:hello@josi.tech">hello@josi.tech</a>
+          <p>Toronto, Canada · UTC-5</p>
+          <p>Engagements scoped from 4-week pilots to 6-month builds. Fixed-price, milestone, or hourly available.</p>
+          <div class="social">
+            <a href="https://ca.linkedin.com/in/josion">LinkedIn</a>
+            <a href="https://www.github.com/josi321">GitHub</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Josi Donaldson · Toronto, Canada</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

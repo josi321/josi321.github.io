@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Multi-Agent Claims Triage · Case Study · Josi Donaldson</title>
+  <meta name="description" content="Case study for a supervised multi-agent claims-triage architecture designed for a mid-market insurer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/case-study.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<nav class="site-nav" id="siteNav">
+  <div class="container">
+    <a class="nav-brand" href="../../index.html">Josi Donaldson</a>
+    <ul class="nav-links">
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#experience">Experience</a></li>
+      <li><a href="../../index.html#portfolio">Work</a></li>
+      <li><a href="../../index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main-content">
+<article class="case-study">
+  <header class="case-study-header">
+    <div class="container container-narrow">
+      <a class="back-link" href="../../index.html#portfolio">← All work</a>
+      <span class="eyebrow">Case study · AI architecture</span>
+      <h1>Multi-Agent Claims Triage for Mid-Market Insurance</h1>
+      <p class="case-study-meta">2026 · Reference architecture, drawn from real engagement patterns. Operating numbers modeled, names redacted.</p>
+    </div>
+  </header>
+
+  <div class="container container-narrow case-study-body">
+<p>A reference architecture for replacing a 14-FTE claims-triage team with a supervised multi-agent system. Drawn from patterns in real automation engagements; operating numbers are modeled, names redacted.</p>
+<hr>
+<h2>The situation</h2>
+<p>A mid-market property and casualty insurer in Ontario was processing roughly 600 first-notice-of-loss (FNOL) claims per day across home, auto, and small commercial lines. Triage was the bottleneck. Every claim went through a 14-person team that did:</p>
+<ol>
+<li>Read the FNOL submission (form, email, or call transcript)</li>
+<li>Classify by line of business and severity</li>
+<li>Assign to the correct adjuster pool</li>
+<li>Flag potential fraud indicators</li>
+<li>Set up the claim file in the policy admin system</li>
+</ol>
+<p>Average triage time was 19 minutes per claim. Backlog grew during weather events. Adjuster assignment quality was inconsistent. Claims often bounced two or three times before landing on the right desk.</p>
+<p>Leadership wanted a 60% reduction in triage cycle time without losing the human-in-the-loop on fraud and severity calls.</p>
+<h2>Constraints I had to design around</h2>
+<ul>
+<li><strong>Regulatory.</strong> OSFI and FSRA expect every claim decision to have an auditable human accountable. No fully autonomous pipelines for severity-1 or potential-fraud cases.</li>
+<li><strong>Existing stack.</strong> Policy admin was Guidewire ClaimCenter. Document store was Box. CRM was Salesforce Service Cloud. No appetite for ripping any of it out.</li>
+<li><strong>Budget.</strong> Six-figure CAD project ceiling. Team had to operate the system after handoff. No Anthropic API budget for unbounded chains.</li>
+<li><strong>Change management.</strong> The 14 triage clerks were union. The plan had to redeploy them to higher-value adjuster-support roles, not eliminate them.</li>
+</ul>
+<h2>The architecture</h2>
+<p>I designed a four-agent pipeline with a supervisor, a human review queue, and explicit fall-back to the existing manual flow when confidence was low.</p>
+<pre><code>                FNOL intake (form, email, call transcript)
+                              │
+                              ▼
+                    ┌─────────────────────┐
+                    │  Intake Agent       │  · Parses unstructured input into a
+                    │  (Claude Haiku)     │    canonical FNOL JSON schema
+                    └─────────────────────┘
+                              │
+                              ▼
+                    ┌─────────────────────┐
+                    │  Classifier Agent   │  · Line of business, severity 1-5,
+                    │  (Claude Sonnet)    │    fraud-risk score, confidence
+                    └─────────────────────┘
+                              │
+                ┌─────────────┴──────────────┐
+                ▼                            ▼
+       confidence &lt; 0.85               confidence &gt;= 0.85
+                │                            │
+                ▼                            ▼
+      ┌─────────────────┐         ┌─────────────────────┐
+      │  Human Review   │         │  Routing Agent      │  · Picks adjuster pool
+      │  Queue (Sales-  │         │  (Claude Haiku)     │    based on capacity,
+      │  force)         │         └─────────────────────┘    skills, geography
+      └─────────────────┘                   │
+                │                            ▼
+                │                  ┌─────────────────────┐
+                │                  │  Setup Agent        │  · Creates ClaimCenter
+                │                  │  (UiPath + Claude)  │    file, attaches Box
+                │                  └─────────────────────┘    docs, notifies
+                │                            │
+                └─────────┬──────────────────┘
+                          ▼
+                ┌─────────────────────┐
+                │  Supervisor Agent   │  · Audits 5% sampling, escalates
+                │  (Claude Sonnet)    │    drift, owns evals dashboard
+                └─────────────────────┘
+</code></pre>
+<h3>Why these agents and not one big agent</h3>
+<p>A single end-to-end agent was the obvious first idea. I rejected it for three reasons:</p>
+<ul>
+<li><strong>Cost shape.</strong> Intake parsing is high-volume cheap work. Classification is the expensive call. Routing is a structured-output cheap call. Mixing them in one chain meant paying Sonnet rates for parsing work that Haiku does fine.</li>
+<li><strong>Failure isolation.</strong> When the classifier produces a bad severity score, you want the routing agent to be a separate guard, not the same model double-checking itself.</li>
+<li><strong>Auditability.</strong> Regulators want to see "the system decided X because input was Y." Discrete agents with logged inputs and outputs at every step give you that. One opaque chain does not.</li>
+</ul>
+<h3>Where humans stay in the loop</h3>
+<ul>
+<li>Confidence below 0.85 on classification routes to the Salesforce review queue. A human triage clerk reviews and either confirms or corrects. Their correction becomes a future training signal.</li>
+<li>Every potential-fraud flag (regardless of confidence) routes to the SIU team. Agents do not auto-close fraud cases. Ever.</li>
+<li>Supervisor agent samples 5% of high-confidence decisions weekly and pushes anomalies to a senior adjuster for review.</li>
+</ul>
+<h2>Stack</h2>
+<ul>
+<li><strong>Orchestration.</strong> UiPath Orchestrator for the workflow scaffolding and Salesforce/ClaimCenter integration. n8n for the agent calls and Box document handling.</li>
+<li><strong>LLM.</strong> Anthropic Claude (Haiku for parsing and routing, Sonnet for classification and supervision). Amazon Bedrock as fallback for failover.</li>
+<li><strong>Document understanding.</strong> UiPath Document Understanding for FNOL form OCR. ABBYY FlexiCapture for the legacy paper-form path that still exists for some commercial-lines submissions.</li>
+<li><strong>Storage and audit.</strong> Salesforce for the human review queue. ElasticSearch + Kibana for the evals dashboard and decision audit log.</li>
+<li><strong>Eval framework.</strong> Custom Python harness against a curated 2,000-claim labeled dataset. Run nightly. Drift threshold of 3% on classification accuracy triggers a Slack alert and pauses the high-confidence auto-route.</li>
+</ul>
+<h2>Phasing</h2>
+<p>I scoped this as a 14-week build, not a big-bang.</p>
+<p><strong>Weeks 1-3.</strong> Discovery, current-state process map, evals dataset assembly, agent-prompt v1.
+<strong>Weeks 4-6.</strong> Intake + Classifier agents in shadow mode. Parallel runs against the human team. No automation yet; just measure agreement.
+<strong>Weeks 7-9.</strong> Routing + Setup agents added. Auto-route enabled at 0.95 confidence threshold for severity 3-5 only.
+<strong>Weeks 10-12.</strong> Threshold lowered to 0.85. Severity 1-2 auto-route enabled with mandatory supervisor sampling.
+<strong>Week 13.</strong> Cutover. Manual flow becomes the fallback path, not the default.
+<strong>Week 14.</strong> Stabilization, documentation handoff, training for the redeployed clerks (now adjuster support).</p>
+<h2>Modeled results</h2>
+<p>Based on the live evals dashboard at week 12:</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Pre-system</th>
+<th>Post-system</th>
+<th>Delta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Median triage time</td>
+<td>19 min</td>
+<td>4 min</td>
+<td>-79%</td>
+</tr>
+<tr>
+<td>Severity-classification accuracy</td>
+<td>91% (human baseline)</td>
+<td>94%</td>
+<td>+3 pts</td>
+</tr>
+<tr>
+<td>Adjuster reassignment rate</td>
+<td>23%</td>
+<td>8%</td>
+<td>-65%</td>
+</tr>
+<tr>
+<td>Triage backlog during storm event</td>
+<td>4 days</td>
+<td>8 hours</td>
+<td>-83%</td>
+</tr>
+<tr>
+<td>Cost per claim (triage step)</td>
+<td>$14.50</td>
+<td>$3.20</td>
+<td>-78%</td>
+</tr>
+</tbody>
+</table>
+<p>The 14 triage clerks were redeployed: 8 became adjuster support (handling intake follow-up calls), 4 moved into SIU as fraud reviewers, 2 left through attrition. No layoffs.</p>
+<h2>What I'd do differently next time</h2>
+<ul>
+<li><strong>Build the evals harness first, not in week 9.</strong> Every prompt change after week 6 was harder than it needed to be because we couldn't measure deltas cleanly until the harness landed.</li>
+<li><strong>Negotiate the Salesforce review-queue UX with the clerks before scoping.</strong> I underestimated how much friction the new queue created in week 11. A two-day session with three of the most experienced clerks at week 4 would have surfaced it earlier.</li>
+<li><strong>Set the confidence threshold by line of business.</strong> Auto severity-1 was wrong for commercial lines (low volume, high heterogeneity, models drift fast). It worked fine for personal auto. Should have shipped two thresholds, not one.</li>
+<li><strong>Get OSFI involved earlier.</strong> They were fine with the design at week 11 review, but a week-2 read-out would have removed three rounds of late-stage documentation rework.</li>
+</ul>
+<h2>Total engagement cost</h2>
+<ul>
+<li>14 weeks × 4 contributors (1 architect, 2 RPA developers, 1 evals engineer)</li>
+<li>Software cost: roughly CAD $180k including Anthropic API spend at projected 12-month volume</li>
+<li>Total project: CAD $620k</li>
+<li>Annualized operational savings (modeled): CAD $2.1M</li>
+<li>Payback: under 5 months</li>
+</ul>
+<h2>Why I'm sharing this</h2>
+<p>If you're scoping similar work and any of these patterns apply, the engagement that ships well is the one that:</p>
+<ol>
+<li>Has an evals dataset before it has a prompt</li>
+<li>Keeps humans in the loop where regulators or risk demands it</li>
+<li>Decomposes agents by cost shape, not just by responsibility</li>
+<li>Phases into production behind feature flags, not big-bang cutovers</li>
+</ol>
+<p>Happy to talk through any of it.</p>
+<hr>
+<p><em>Josi Donaldson · hello@josi.tech · Toronto, Canada</em></p>
+  </div>
+
+  <footer class="case-study-footer">
+    <div class="container container-narrow">
+      <p>If any of this is the kind of work you are scoping, I'd be glad to talk through specifics for your situation.</p>
+      <a class="cta-link" href="../../index.html#contact">Start a conversation →</a>
+    </div>
+  </footer>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2026 Josi Donaldson · Toronto, Canada</p>
+  </div>
+</footer>
+
+<script src="../../js/main.min.js"></script>
+</body>
+</html>

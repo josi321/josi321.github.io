@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" aria-hidden="true">
+  <defs>
+    <radialGradient id="blob-grad" cx="40%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#c8d4ba" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#97b57b" stop-opacity="0.65"/>
+    </radialGradient>
+  </defs>
+  <path d="M 120 20
+           C 180 22 218 70 220 130
+           C 222 180 180 222 122 220
+           C 70 218 22 180 20 124
+           C 18 70 60 18 120 20 Z"
+        fill="url(#blob-grad)"/>
+</svg>

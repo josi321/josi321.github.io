@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" aria-hidden="true">
+  <!-- Organic textured shape, sage palette, hand-drawn feel -->
+  <defs>
+    <radialGradient id="stone" cx="38%" cy="34%" r="78%">
+      <stop offset="0%" stop-color="#b8c6a1" stop-opacity="1"/>
+      <stop offset="42%" stop-color="#97b57b" stop-opacity="1"/>
+      <stop offset="78%" stop-color="#6e8d57" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#51733f" stop-opacity="1"/>
+    </radialGradient>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="7"/>
+      <feColorMatrix values="0 0 0 0 0.32  0 0 0 0 0.45  0 0 0 0 0.25  0 0 0 0.5 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+      <feBlend in="SourceGraphic" mode="multiply"/>
+    </filter>
+    <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+
+  <!-- Main organic blob (slightly irregular) -->
+  <path d="M 240 60
+           C 350 60 410 130 415 230
+           C 420 320 370 405 270 418
+           C 175 432 75 380 65 280
+           C 56 180 130 60 240 60 Z"
+        fill="url(#stone)"/>
+
+  <!-- Texture overlay using same path -->
+  <path d="M 240 60
+           C 350 60 410 130 415 230
+           C 420 320 370 405 270 418
+           C 175 432 75 380 65 280
+           C 56 180 130 60 240 60 Z"
+        fill="url(#stone)"
+        filter="url(#grain)"
+        opacity="0.55"/>
+
+  <!-- Subtle highlight crescent -->
+  <path d="M 110 130
+           C 160 80 230 70 290 90
+           C 260 80 200 100 170 130
+           C 145 155 130 180 120 200 Z"
+        fill="#d8e2c8"
+        opacity="0.35"/>
+
+  <!-- Darker shadow patches -->
+  <ellipse cx="320" cy="340" rx="60" ry="40" fill="#3a5530" opacity="0.3" transform="rotate(-15 320 340)"/>
+  <ellipse cx="180" cy="360" rx="40" ry="25" fill="#3a5530" opacity="0.25" transform="rotate(20 180 360)"/>
+
+  <!-- Lighter mottling -->
+  <ellipse cx="160" cy="180" rx="35" ry="22" fill="#c8d4ba" opacity="0.4" transform="rotate(30 160 180)"/>
+  <ellipse cx="280" cy="220" rx="25" ry="18" fill="#b8c6a1" opacity="0.5" transform="rotate(-10 280 220)"/>
+</svg>
